@@ -9,6 +9,8 @@ pnpm-debug.log*
 node_modules/
 dist/
 dist-ssr/
+/.pnp
+.pnp.js
 
 # Local environment files
 .env.*
