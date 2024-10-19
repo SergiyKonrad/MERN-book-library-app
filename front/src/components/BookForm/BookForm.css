@@ -1,0 +1,66 @@
+.book-form {
+  width: 100%;
+}
+
+.book-form label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.book-form input {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+/* corrected */
+.book-form input:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.book-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.book-form button:hover {
+  background-color: #0056b3;
+}
+
+/* corrected */
+.book-form button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.book-form .spinner {
+  animation: spinner 1s infinite linear;
+  margin-left: 10px;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Form */
+@media screen and (max-width: 768px) {
+  .book-form input {
+    width: 100%;
+  }
+}

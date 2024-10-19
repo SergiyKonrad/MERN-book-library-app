@@ -55,3 +55,14 @@
     align-self: unset;
   }
 }
+
+@media (max-width: 768px) {
+  .app-block {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .app-main {
+    width: 90%;
+  }
+}
