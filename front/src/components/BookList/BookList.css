@@ -1,7 +1,8 @@
 .book-list ul {
   padding: 0;
-  margin: 20px -20px;
+  margin: 20px auto;
   list-style: none;
+  /* width: 90%; */
 }
 
 .book-list li {
