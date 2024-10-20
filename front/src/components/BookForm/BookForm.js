@@ -9,8 +9,6 @@ const BookForm = () => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
 
-  // const [description, setDescription] = useState('')
-
   const dispatch = useDispatch()
 
   const handleAddRandomBook = () => {
@@ -25,12 +23,9 @@ const BookForm = () => {
     e.preventDefault()
 
     if (title && author) {
-      const book = createBookWithID({ title, author })
-
-      dispatch(addBook(book))
+      dispatch(addBook(createBookWithID({ title, author })))
       setTitle('')
       setAuthor('')
-      // setDescription('')
     }
   }
 
@@ -56,14 +51,6 @@ const BookForm = () => {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-
-        {/* <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}></textarea>
-        </div> */}
 
         <button type="submit">Add Book</button>
         <button type="button" onClick={handleAddRandomBook}>
