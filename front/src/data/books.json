@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": 2011,
+    "description": "Explores two systems of thinking: fast, intuitive thought and slower, more deliberate reasoning, and how cognitive biases affect decisions."
+  },
+  {
+    "title": "Martin Eden",
+    "author": "Jack London",
+    "year": 1909,
+    "description": "A semi-autobiographical novel about a working-class man’s rise to become a writer, exploring individualism and class struggles."
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "description": "A dystopian novel depicting a totalitarian regime, with themes of surveillance, propaganda, and individual freedom."
+  },
+  {
+    "title": "Roadside Picnic",
+    "author": "Arkady and Boris Strugatsky",
+    "year": 1972,
+    "description": "Sci-fi novel about mysterious zones left by alien visitors, filled with existential questions about human ambition and the unknown."
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": 1988,
+    "description": "A philosophical novel about a young shepherd named Santiago who embarks on a journey to find a hidden treasure, learning about personal growth and dreams."
+  },
+  {
+    "title": "Antifragile: Things That Gain from Disorder",
+    "author": "Nassim Nicholas Taleb",
+    "year": 2012,
+    "description": "Taleb introduces the concept of antifragility, where things grow stronger through adversity and disorder."
+  },
+  {
+    "title": "The Black Swan: The Impact of the Highly Improbable",
+    "author": "Nassim Nicholas Taleb",
+    "year": 2007,
+    "description": "Explores the profound impact of rare, unpredictable events (Black Swans) that shape history, business, and everyday life."
+  },
+  {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor Frankl",
+    "year": 1946,
+    "description": "Frankl recounts his experiences in Nazi concentration camps and how finding meaning in suffering helped him and others endure."
+  },
+  {
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "year": 2001,
+    "description": "A story of survival and faith as Pi is stranded on a lifeboat with a Bengal tiger, raising deep questions about storytelling and belief."
+  },
+  {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "year": 1997,
+    "description": "Personal finance book contrasting the approaches of Kiyosaki’s two 'dads' to wealth building and financial independence."
+  },
+  {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "year": 2016,
+    "description": "Duckworth argues that grit—passion and perseverance over the long term—matters more than talent in achieving success."
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "year": 2014,
+    "description": "A sweeping history of humanity, exploring cognitive, agricultural, and technological revolutions that shaped the modern world."
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "year": 1880,
+    "description": "A philosophical novel about faith, doubt, and morality, centered around the Karamazov family’s struggles."
+  },
+  {
+    "title": "The War of Art",
+    "author": "Steven Pressfield",
+    "year": 2002,
+    "description": "A guide to overcoming resistance and procrastination, particularly in creative work, advocating discipline and perseverance."
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": 2018,
+    "description": "A practical guide to building good habits and breaking bad ones by focusing on small, consistent actions."
+  },
+  {
+    "title": "The 4-Hour Workweek",
+    "author": "Tim Ferriss",
+    "year": 2007,
+    "description": "Ferriss advocates for optimizing time, outsourcing, and automating work to create a lifestyle of freedom and minimalism."
+  },
+  {
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "year": 1958,
+    "description": "A novel about the clash between African tribal society and European colonialism, focusing on the life of Okonkwo in Nigeria."
+  },
+  {
+    "title": "The Book of Job",
+    "author": "Unknown",
+    "year": -600,
+    "description": "A biblical story about faith and suffering, with Job being tested by extreme hardship while questioning divine justice."
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "year": -800,
+    "description": "An ancient epic poem chronicling the long journey home of Odysseus after the Trojan War, filled with adventure and lessons of perseverance."
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "year": -500,
+    "description": "A classic military treatise that offers insights into strategy, leadership, and warfare, widely applied in various fields today."
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "description": "A coming-of-age novel about teenage alienation and rebellion, centered around the troubled character Holden Caulfield."
+  },
+  {
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "year": 1952,
+    "description": "A novel about race and identity, exploring the experiences of a Black man who feels invisible in mid-20th-century America."
+  },
+  {
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "year": 1952,
+    "description": "A novella about an aging fisherman’s epic struggle to catch a giant marlin, symbolizing human perseverance and dignity."
+  },
+  {
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "year": 2012,
+    "description": "Explores how habits form and how individuals and organizations can harness them to achieve success."
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "year": 1932,
+    "description": "A dystopian novel depicting a future society that sacrifices individuality and freedom for technological control and pleasure."
+  },
+  {
+    "title": "Aphorisms on the Wisdom of Life",
+    "author": "Arthur Schopenhauer",
+    "year": 1851,
+    "description": "Philosophical reflections on living a meaningful and contented life, emphasizing self-understanding and simplicity."
+  },
+  {
+    "title": "The Time Machine",
+    "author": "H.G. Wells",
+    "year": 1895,
+    "description": "A science fiction novel about a man who invents a machine to travel through time, exploring distant futures and societal collapse."
+  },
+  {
+    "title": "False Mirrors",
+    "author": "Sergey Lukyanenko",
+    "year": 1999,
+    "description": "Part of the *Labyrinth of Reflections* series, dealing with themes of identity, virtual reality, and freedom."
+  },
+  {
+    "title": "Labyrinth of Reflections",
+    "author": "Sergey Lukyanenko",
+    "year": 1996,
+    "description": "A cyberpunk novel set in a virtual world where people can escape from reality, but with unexpected consequences."
+  },
+  {
+    "title": "Awaken the Giant Within",
+    "author": "Tony Robbins",
+    "year": 1991,
+    "description": "A guide to self-mastery, explaining how to take control of one’s emotions, finances, and personal life to achieve lasting change."
+  },
+  {
+    "title": "The Magic of Thinking Big",
+    "author": "David J. Schwartz",
+    "year": 1959,
+    "description": "A motivational book that encourages readers to think positively and aim high to achieve success in life and work."
+  },
+  {
+    "title": "The Gadfly",
+    "author": "Ethel Lilian Voynich",
+    "year": 1897,
+    "description": "A novel set in Italy during the Risorgimento, focusing on themes of political revolution, personal betrayal, and faith."
+  }
+]
