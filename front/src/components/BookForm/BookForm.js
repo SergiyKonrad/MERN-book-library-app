@@ -8,6 +8,9 @@ import './BookForm.css'
 const BookForm = () => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
+
+  const [year, setYear] = useState('') // Added year state
+  const [description, setDescription] = useState('')
   const dispatch = useDispatch()
 
   const handleAddRandomBook = () => {
@@ -29,6 +32,8 @@ const BookForm = () => {
       const book = {
         title,
         author,
+        year,
+        description,
         id: uuidv4(),
       }
       // console.log(title, author)
@@ -36,6 +41,8 @@ const BookForm = () => {
       dispatch(addBook(book))
       setTitle('')
       setAuthor('')
+      setYear('')
+      setDescription('')
     }
   }
 
@@ -61,6 +68,24 @@ const BookForm = () => {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
+
+        <div>
+          <label htmlFor="year">Year:</label>
+          <input
+            type="number"
+            id="year"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="description">Description:</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}></textarea>
+        </div>
+
         <button type="submit">Add book</button>
         <button type="button" onClick={handleAddRandomBook}>
           Add Random
