@@ -54,6 +54,18 @@
     "description": "A story of survival and faith as Pi is stranded on a lifeboat with a Bengal tiger, raising deep questions about storytelling and belief."
   },
   {
+    "title": "The Master and Margarita",
+    "author": "Mikhail Bulgakov",
+    "year": 1967,
+    "description": "A satirical novel blending supernatural elements with social and political commentary, centering on the Devil's visit to the atheistic Soviet Union and the intertwined love story of the Master and Margarita."
+  },
+  {
+    "title": "Heart of a Dog",
+    "author": "Mikhail Bulgakov",
+    "year": 1925,
+    "description": "A satirical novella that tells the story of a stray dog who undergoes a transformation into a human through a scientist's experiment, offering a biting critique of Soviet society and human nature."
+  },
+  {
     "title": "Rich Dad Poor Dad",
     "author": "Robert Kiyosaki",
     "year": 1997,
@@ -216,22 +228,10 @@
     "description": "A spiritual guide to living in the present moment, helping readers transcend the mind's constant chatter and achieve inner peace."
   },
   {
-    "title": "Shōgun",
-    "author": "James Clavell",
-    "year": 1975,
-    "description": "A historical novel set in feudal Japan, following the journey of an English navigator and his immersion into Japanese culture and politics."
-  },
-  {
     "title": "The Grapes of Wrath",
     "author": "John Steinbeck",
     "year": 1939,
     "description": "A powerful novel that follows the Joad family as they travel from the Dust Bowl to California during the Great Depression, exploring themes of poverty, injustice, and resilience."
-  },
-  {
-    "title": "The Bell Jar",
-    "author": "Sylvia Plath",
-    "year": 1963,
-    "description": "A semi-autobiographical novel that delves into the struggles of a young woman’s mental health, providing a stark portrayal of depression and identity in the 20th century."
   },
   {
     "title": "Homo Deus: A Brief History of Tomorrow",

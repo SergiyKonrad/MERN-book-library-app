@@ -1,6 +1,6 @@
 {
   "name": "MERN-book-library-app",
-  "short_name": "MERN Redux",
+  "short_name": "Book Library",
   "icons": [
     {
       "src": "favicon.ico",
