@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addBook } from '../../redux/books/actionCreators'
+import { addBook } from '../../redux/slices/booksSlice'
 import createBookWithID from '../../utils/createBookWithID'
 import booksData from '../../data/books.json'
 import './BookForm.css'
@@ -22,10 +22,15 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (title && author) {
+    const trimmedTitle = title.trim()
+    const trimmedAuthor = author.trim()
+
+    if (trimmedTitle && trimmedAuthor) {
       dispatch(addBook(createBookWithID({ title, author })))
       setTitle('')
       setAuthor('')
+    } else {
+      alert('Please fill in both the title and author fields.')
     }
   }
 

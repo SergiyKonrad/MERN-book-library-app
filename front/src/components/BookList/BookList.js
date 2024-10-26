@@ -1,6 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { BsBookmarkStarFill, BsBookmarkStar } from 'react-icons/bs'
-import { deleteBook, toggleFavorite } from '../../redux/books/actionCreators'
+import {
+  deleteBook,
+  toggleFavorite,
+  selectBooks,
+} from '../../redux/slices/booksSlice'
 import {
   selectTitleFilter,
   selectAuthorFilter,
@@ -9,7 +13,7 @@ import {
 import './BookList.css'
 
 const BookList = () => {
-  const books = useSelector((state) => state.books)
+  const books = useSelector(selectBooks)
   const titleFilter = useSelector(selectTitleFilter)
   const authorFilter = useSelector(selectAuthorFilter)
   const onlyFavoriteFilter = useSelector(selectOnlyFavoriteFilter)
@@ -24,13 +28,21 @@ const BookList = () => {
     dispatch(toggleFavorite(id))
   }
 
+  const trimmedTitleFilter = titleFilter.trim()
+  const trimmedAuthorFilter = authorFilter.trim()
+
   const filteredBooks = books.filter((book) => {
     const matchesTitle = book.title
       .toLowerCase()
-      .includes(titleFilter.toLowerCase())
+      .includes(trimmedTitleFilter.toLowerCase())
     const matchesAuthor = book.author
       .toLowerCase()
-      .includes(authorFilter.toLowerCase())
+      .includes(trimmedAuthorFilter.toLowerCase())
+
+    // ---or  another approach with  explicit type conversions ---
+    //       const matchesTitle = String(book.title).toLowerCase().includes(String(titleFilter).toLowerCase());
+    // const matchesAuthor = String(book.author).toLowerCase().includes(String(authorFilter).toLowerCase());
+
     const matchesFavorite = onlyFavoriteFilter ? book.isFavorite : true
     return matchesTitle && matchesAuthor && matchesFavorite
   })

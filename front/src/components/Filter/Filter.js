@@ -38,6 +38,7 @@ const Filter = () => {
         <div className="filter-group">
           <input
             type="text"
+            name="titleFilter" // Added name attribute
             value={titleFilter}
             placeholder="Filter by title..."
             onChange={handleTitleFilterChange}
@@ -46,6 +47,7 @@ const Filter = () => {
         <div className="filter-group">
           <input
             type="text"
+            name="authorFilter" // Added name attribute
             value={authorFilter}
             placeholder="Filter by author..."
             onChange={handleAuthorFilterChange}
@@ -55,6 +57,7 @@ const Filter = () => {
           <label>
             <input
               type="checkbox"
+              name="onlyFavoriteFilter" // Added name attribute
               checked={onlyFavoriteFilter}
               onChange={handleOnlyFavoriteFilterChange}
             />{' '}
