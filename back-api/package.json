@@ -1,0 +1,23 @@
+{
+  "name": "back-api",
+  "version": "1.0.0",
+  "description": "A backend API for providing random book data to a frontend MERN application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "API",
+    "Express",
+    "Books",
+    "Backend"
+  ],
+  "author": "Sergiy Konrad",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "nodemon": "^3.0.1"
+  }
+}

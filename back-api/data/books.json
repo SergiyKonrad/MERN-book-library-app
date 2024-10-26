@@ -1,0 +1,464 @@
+[
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": 2011,
+    "description": "Explores two systems of thinking: fast, intuitive thought and slower, more deliberate reasoning, and how cognitive biases affect decisions."
+  },
+  {
+    "title": "Martin Eden",
+    "author": "Jack London",
+    "year": 1909,
+    "description": "A semi-autobiographical novel about a working-class man’s rise to become a writer, exploring individualism and class struggles."
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "description": "A dystopian novel depicting a totalitarian regime, with themes of surveillance, propaganda, and individual freedom."
+  },
+  {
+    "title": "Roadside Picnic",
+    "author": "Arkady and Boris Strugatsky",
+    "year": 1972,
+    "description": "Sci-fi novel about mysterious zones left by alien visitors, filled with existential questions about human ambition and the unknown."
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": 1988,
+    "description": "A philosophical novel about a young shepherd named Santiago who embarks on a journey to find a hidden treasure, learning about personal growth and dreams."
+  },
+  {
+    "title": "Antifragile: Things That Gain from Disorder",
+    "author": "Nassim Nicholas Taleb",
+    "year": 2012,
+    "description": "Taleb introduces the concept of antifragility, where things grow stronger through adversity and disorder."
+  },
+  {
+    "title": "The Black Swan: The Impact of the Highly Improbable",
+    "author": "Nassim Nicholas Taleb",
+    "year": 2007,
+    "description": "Explores the profound impact of rare, unpredictable events (Black Swans) that shape history, business, and everyday life."
+  },
+  {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor Frankl",
+    "year": 1946,
+    "description": "Frankl recounts his experiences in Nazi concentration camps and how finding meaning in suffering helped him and others endure."
+  },
+  {
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "year": 2001,
+    "description": "A story of survival and faith as Pi is stranded on a lifeboat with a Bengal tiger, raising deep questions about storytelling and belief."
+  },
+  {
+    "title": "The Master and Margarita",
+    "author": "Mikhail Bulgakov",
+    "year": 1967,
+    "description": "A satirical novel blending supernatural elements with social and political commentary, centering on the Devil's visit to the atheistic Soviet Union and the intertwined love story of the Master and Margarita."
+  },
+  {
+    "title": "Heart of a Dog",
+    "author": "Mikhail Bulgakov",
+    "year": 1925,
+    "description": "A satirical novella that tells the story of a stray dog who undergoes a transformation into a human through a scientist's experiment, offering a biting critique of Soviet society and human nature."
+  },
+  {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "year": 1997,
+    "description": "Personal finance book contrasting the approaches of Kiyosaki’s two 'dads' to wealth building and financial independence."
+  },
+  {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "year": 2016,
+    "description": "Duckworth argues that grit—passion and perseverance over the long term—matters more than talent in achieving success."
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "year": 2014,
+    "description": "A sweeping history of humanity, exploring cognitive, agricultural, and technological revolutions that shaped the modern world."
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "year": 1880,
+    "description": "A philosophical novel about faith, doubt, and morality, centered around the Karamazov family’s struggles."
+  },
+  {
+    "title": "The War of Art",
+    "author": "Steven Pressfield",
+    "year": 2002,
+    "description": "A guide to overcoming resistance and procrastination, particularly in creative work, advocating discipline and perseverance."
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": 2018,
+    "description": "A practical guide to building good habits and breaking bad ones by focusing on small, consistent actions."
+  },
+  {
+    "title": "The 4-Hour Workweek",
+    "author": "Tim Ferriss",
+    "year": 2007,
+    "description": "Ferriss advocates for optimizing time, outsourcing, and automating work to create a lifestyle of freedom and minimalism."
+  },
+  {
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "year": 1958,
+    "description": "A novel about the clash between African tribal society and European colonialism, focusing on the life of Okonkwo in Nigeria."
+  },
+  {
+    "title": "The Book of Job",
+    "author": "Unknown",
+    "year": -600,
+    "description": "A biblical story about faith and suffering, with Job being tested by extreme hardship while questioning divine justice."
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "year": -800,
+    "description": "An ancient epic poem chronicling the long journey home of Odysseus after the Trojan War, filled with adventure and lessons of perseverance."
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "year": -500,
+    "description": "A classic military treatise that offers insights into strategy, leadership, and warfare, widely applied in various fields today."
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "description": "A coming-of-age novel about teenage alienation and rebellion, centered around the troubled character Holden Caulfield."
+  },
+  {
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "year": 1952,
+    "description": "A novel about race and identity, exploring the experiences of a Black man who feels invisible in mid-20th-century America."
+  },
+  {
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "year": 1952,
+    "description": "A novella about an aging fisherman’s epic struggle to catch a giant marlin, symbolizing human perseverance and dignity."
+  },
+  {
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "year": 2012,
+    "description": "Explores how habits form and how individuals and organizations can harness them to achieve success."
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "year": 1932,
+    "description": "A dystopian novel depicting a future society that sacrifices individuality and freedom for technological control and pleasure."
+  },
+  {
+    "title": "Aphorisms on the Wisdom of Life",
+    "author": "Arthur Schopenhauer",
+    "year": 1851,
+    "description": "Philosophical reflections on living a meaningful and contented life, emphasizing self-understanding and simplicity."
+  },
+  {
+    "title": "The Time Machine",
+    "author": "H.G. Wells",
+    "year": 1895,
+    "description": "A science fiction novel about a man who invents a machine to travel through time, exploring distant futures and societal collapse."
+  },
+  {
+    "title": "False Mirrors",
+    "author": "Sergey Lukyanenko",
+    "year": 1999,
+    "description": "Part of the *Labyrinth of Reflections* series, dealing with themes of identity, virtual reality, and freedom."
+  },
+  {
+    "title": "Labyrinth of Reflections",
+    "author": "Sergey Lukyanenko",
+    "year": 1996,
+    "description": "A cyberpunk novel set in a virtual world where people can escape from reality, but with unexpected consequences."
+  },
+  {
+    "title": "Awaken the Giant Within",
+    "author": "Tony Robbins",
+    "year": 1991,
+    "description": "A guide to self-mastery, explaining how to take control of one’s emotions, finances, and personal life to achieve lasting change."
+  },
+  {
+    "title": "The Magic of Thinking Big",
+    "author": "David J. Schwartz",
+    "year": 1959,
+    "description": "A motivational book that encourages readers to think positively and aim high to achieve success in life and work."
+  },
+  {
+    "title": "The Gadfly",
+    "author": "Ethel Lilian Voynich",
+    "year": 1897,
+    "description": "A novel set in Italy during the Risorgimento, focusing on themes of political revolution, personal betrayal, and faith."
+  },
+  {
+    "title": "The Tao of Pooh",
+    "author": "Benjamin Hoff",
+    "year": 1982,
+    "description": "A whimsical and insightful introduction to Taoism, using the characters from A.A. Milne's Winnie the Pooh to illustrate Taoist principles."
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "year": 180,
+    "description": "A series of personal writings by the Roman Emperor, focusing on self-discipline, virtue, and the nature of existence from a Stoic perspective."
+  },
+  {
+    "title": "The Prophet",
+    "author": "Kahlil Gibran",
+    "year": 1923,
+    "description": "A poetic and philosophical work that offers wisdom on various aspects of life, including love, work, and freedom."
+  },
+  {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "year": 1997,
+    "description": "A spiritual guide to living in the present moment, helping readers transcend the mind's constant chatter and achieve inner peace."
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "year": 1939,
+    "description": "A powerful novel that follows the Joad family as they travel from the Dust Bowl to California during the Great Depression, exploring themes of poverty, injustice, and resilience."
+  },
+  {
+    "title": "Homo Deus: A Brief History of Tomorrow",
+    "author": "Yuval Noah Harari",
+    "year": 2016,
+    "description": "A thought-provoking look at the future of humanity, exploring the possible outcomes of technological and biological advancements."
+  },
+  {
+    "title": "The Singularity Is Near: When Humans Transcend Biology",
+    "author": "Ray Kurzweil",
+    "year": 2005,
+    "description": "Kurzweil predicts a future where humans merge with technology, exploring artificial intelligence, biotechnology, and the impact of the singularity."
+  },
+  {
+    "title": "Superintelligence: Paths, Dangers, Strategies",
+    "author": "Nick Bostrom",
+    "year": 2014,
+    "description": "An analysis of the future of artificial intelligence and the potential risks of creating machines that could surpass human intelligence."
+  },
+  {
+    "title": "The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future",
+    "author": "Kevin Kelly",
+    "year": 2016,
+    "description": "Kelly explores how various technological trends, such as artificial intelligence and virtual reality, are likely to influence the future."
+  },
+  {
+    "title": "Future Shock",
+    "author": "Alvin Toffler",
+    "year": 1970,
+    "description": "A groundbreaking work discussing how rapidly changing technologies and societal shifts will lead to a sense of 'future shock'—overwhelmed by too much change."
+  },
+  {
+    "title": "The Age of Surveillance Capitalism",
+    "author": "Shoshana Zuboff",
+    "year": 2019,
+    "description": "A deep dive into how corporations are using personal data for profit and the societal consequences of surveillance capitalism."
+  },
+  {
+    "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+    "author": "C.S. Lewis",
+    "year": 1950,
+    "description": "The first and most famous book in the Narnia series, where four children discover a magical world and must help defeat the White Witch to save it."
+  },
+  {
+    "title": "Unbroken: A World War II Story of Survival, Resilience, and Redemption",
+    "author": "Laura Hillenbrand",
+    "year": 2010,
+    "description": "The incredible true story of Louis Zamperini, an Olympic athlete turned WWII bombardier, who survives being shot down, stranded at sea, and imprisoned in Japanese POW camps."
+  },
+  {
+    "title": "The Long Walk: The True Story of a Trek to Freedom",
+    "author": "Slavomir Rawicz",
+    "year": 1956,
+    "description": "The story of a group of prisoners who escape from a Soviet labor camp in Siberia and embark on a grueling journey to freedom, covering thousands of miles."
+  },
+  {
+    "title": "When Breath Becomes Air",
+    "author": "Paul Kalanithi",
+    "year": 2016,
+    "description": "A poignant memoir by a neurosurgeon who faces terminal cancer, exploring his journey of finding meaning in life and death."
+  },
+  {
+    "title": "I Am Malala: The Girl Who Stood Up for Education and Was Shot by the Taliban",
+    "author": "Malala Yousafzai",
+    "year": 2013,
+    "description": "The inspiring true story of Malala, a young Pakistani girl who stood up for education rights and survived an assassination attempt by the Taliban."
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "year": 2018,
+    "description": "A memoir about growing up in a survivalist family in rural Idaho, and Tara's fight for an education and self-discovery despite isolation and hardship."
+  },
+  {
+    "title": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "year": 2005,
+    "description": "An unforgettable memoir of a dysfunctional but resilient family, led by parents who both inspire and neglect, as the author rises from poverty to success."
+  },
+  {
+    "title": "The Choice: Embrace the Possible",
+    "author": "Edith Eva Eger",
+    "year": 2017,
+    "description": "A powerful memoir by a Holocaust survivor who became a renowned psychologist, focusing on healing, trauma, and the freedom that comes from forgiving."
+  },
+  {
+    "title": "Between a Rock and a Hard Place",
+    "author": "Aron Ralston",
+    "year": 2004,
+    "description": "The harrowing true story of mountaineer Aron Ralston, who becomes trapped under a boulder and amputates his own arm to survive."
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": 1960,
+    "description": "A classic novel that explores themes of racial injustice, morality, and compassion through the eyes of young Scout Finch in the American South."
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "description": "A beloved novel about manners, upbringing, morality, and love, focusing on Elizabeth Bennet as she navigates issues of marriage and social status."
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925,
+    "description": "A novel that critiques the American Dream through the tragic story of Jay Gatsby, a wealthy man obsessed with the past, set in the Roaring Twenties."
+  },
+  {
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "year": 1851,
+    "description": "An epic tale of Captain Ahab’s obsessive quest to hunt the white whale, Moby Dick, filled with philosophical and symbolic meaning."
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "year": 1869,
+    "description": "A historical novel that interweaves the lives of families with the events of the Napoleonic Wars, offering deep insights into human nature, history, and morality."
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "year": 1954,
+    "description": "An epic fantasy trilogy following the journey of Frodo Baggins as he sets out to destroy the One Ring and save Middle-earth from the dark lord Sauron."
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "year": 1997,
+    "description": "The first book in the Harry Potter series, introducing the world of magic and the young wizard's adventures at Hogwarts School of Witchcraft and Wizardry."
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "year": 1937,
+    "description": "A prelude to *The Lord of the Rings*, following the journey of Bilbo Baggins as he embarks on an adventure to reclaim a treasure from the dragon Smaug."
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "year": 1985,
+    "description": "A dystopian novel set in a theocratic future where women are stripped of their rights, focusing on themes of oppression and resistance."
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "year": 1967,
+    "description": "A magical realist epic about the rise and fall of the Buendía family in the fictional town of Macondo, exploring themes of memory and fate."
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "year": 1847,
+    "description": "A novel that follows the life of Jane Eyre, an orphan who grows into a strong-willed and independent woman, dealing with themes of morality, love, and redemption."
+  },
+  {
+    "title": "The Black Council",
+    "author": "Panteleimon Kulish",
+    "year": 1845,
+    "description": "Considered the first historical novel in Ukrainian literature, 'The Black Council' explores the social and political struggles of Ukraine in the 17th century."
+  },
+  {
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "year": 2003,
+    "description": "A story about friendship, betrayal, and redemption set against the backdrop of a changing Afghanistan."
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "year": 1969,
+    "description": "A science fiction-infused anti-war novel about Billy Pilgrim, a soldier who becomes 'unstuck in time' and witnesses the bombing of Dresden."
+  },
+  {
+    "title": "The Garden of Divine Songs",
+    "author": "Hryhorii Skovoroda",
+    "year": 1785,
+    "description": "A collection of philosophical and mystical poetry, Skovoroda’s work delves into themes of human nature, happiness, and the search for inner peace."
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "year": 1818,
+    "description": "A gothic horror novel about Victor Frankenstein and the monster he creates, raising questions about ambition, ethics, and humanity."
+  },
+  {
+    "title": "Catch-22",
+    "author": "Joseph Heller",
+    "year": 1961,
+    "description": "A satirical novel about the absurdities of war, following the experiences of Captain Yossarian during World War II."
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "year": 1890,
+    "description": "A philosophical novel about the consequences of living a life devoted to pleasure and vanity, focusing on the corrupting influence of a magical portrait."
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "year": 1862,
+    "description": "A monumental novel that explores justice, morality, and redemption in post-revolutionary France, centering on the story of ex-convict Jean Valjean."
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "year": 1953,
+    "description": "A dystopian novel where books are outlawed and burned, exploring themes of censorship, freedom of thought, and individuality."
+  },
+  {
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "year": 1847,
+    "description": "A gothic novel about the intense, destructive love between Heathcliff and Catherine, and the effects of their relationship on those around them."
+  },
+  {
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "year": 1605,
+    "description": "A satirical novel about the adventures of a man who believes himself to be a knight, offering a critique of idealism and reality."
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "year": 2006,
+    "description": "A post-apocalyptic novel about a father and son’s journey through a desolate world, focusing on survival, love, and hope."
+  }
+]
