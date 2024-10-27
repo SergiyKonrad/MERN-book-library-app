@@ -16,7 +16,7 @@ const BookForm = () => {
     const randomIndex = Math.floor(Math.random() * booksData.length)
     const randomBook = booksData[randomIndex]
     // const randomBookWithId = createBookWithID({ ...randomBook, isRandom: true })
-    const randomBookWithId = createBookWithID(randomBook, true)
+    const randomBookWithId = createBookWithID(randomBook, true, 'random')
     dispatch(addBook(randomBookWithId))
   }
 
@@ -39,11 +39,12 @@ const BookForm = () => {
     try {
       const res = await axios.get('http://localhost:4000/random-book')
       if (res?.data?.title && res?.data?.author) {
-        const apiBookWithId = createBookWithID(res.data, true)
+        const apiBookWithId = createBookWithID(res.data, true, 'API')
         dispatch(addBook(apiBookWithId))
       }
     } catch (error) {
-      console.log('Error fetching random book', error)
+      alert('Error fetching random book. Please try again later.')
+      console.error('Error fetching random book', error)
     }
   }
 
@@ -58,6 +59,7 @@ const BookForm = () => {
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            // autocomplete="off"
           />
         </div>
         <div>
@@ -67,6 +69,7 @@ const BookForm = () => {
             id="author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
+            autocomplete="off"
           />
         </div>
 

@@ -74,14 +74,21 @@ const BookList = () => {
           {filteredBooks.map((book, i) => (
             <li key={book.id}>
               <div className="book-info">
-                {++i}. {highlightMatch(book.title, titleFilter)} by{' '}
+                {++i}. {highlightMatch(book.title, titleFilter)}{' '}
+                {book.isRandom ? `(${book.year})` : book.year} by{' '}
                 <strong>{highlightMatch(book.author, authorFilter)}</strong>{' '}
-                {book.isRandom ? `(${book.year})` : book.year}
+                <span className="source-info">({book.source})</span>
                 <p>{book.description}</p>
               </div>
 
               <div className="book-actions">
-                <span onClick={() => handleToggleFavorite(book.id)}>
+                <span
+                  onClick={() => handleToggleFavorite(book.id)}
+                  aria-label={
+                    book.isFavorite
+                      ? 'Remove from favorites'
+                      : 'Add to favorites'
+                  }>
                   {book.isFavorite ? (
                     <BsBookmarkStarFill className="star-icon" />
                   ) : (
@@ -89,7 +96,9 @@ const BookList = () => {
                   )}
                 </span>
 
-                <button onClick={() => handleDeleteBook(book.id)}>
+                <button
+                  onClick={() => handleDeleteBook(book.id)}
+                  aria-label="Delete book">
                   Delete
                 </button>
               </div>
