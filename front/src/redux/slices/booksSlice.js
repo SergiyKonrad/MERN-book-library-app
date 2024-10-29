@@ -51,7 +51,6 @@ const booksSlice = createSlice({
     // .addCase(fetchBook.rejected, (state, action) => {
     //   state.loading = false
     //   state.error = action.error.message
-    //    //  or state.errorMsg = action.error.message
     // })
   },
 })
