@@ -2,13 +2,18 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import createBookWithID from '../../utils/createBookWithID'
 import { setError } from './errorSlice'
-// import { setError } from './errorSlice'
 
 const initialState = []
+
+// const initialState = {
+//   books: [],
+//   loading: false,
+// }
 
 export const fetchBook = createAsyncThunk(
   'books/fetchBook',
   async (url, thunkAPI) => {
+    // async (url, { dispatch, rejectWithValue }) => {
     try {
       const res = await axios.get(url)
       return res.data
@@ -25,11 +30,14 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       state.push(action.payload)
-      // or --- return [...state, action.payload]
+      // or ---   state.books.push(action.payload);
     },
 
     deleteBook: (state, action) => {
       return state.filter((book) => book.id !== action.payload)
+      // Since Redux Toolkit uses Immer under the hood, direct assignments like state.books = ... work without needing a return statement. This style is preferred for clarity and follows best practices for handling state mutations in Redux Toolkit.
+
+      // state.books = state.books.filter((book) => book.id !== action.payload)
     },
 
     toggleFavorite: (state, action) => {
@@ -47,17 +55,12 @@ const booksSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      //   .addCase(fetchBook.pending, (state) => {
-      //     state.loading = true;
-      //     state.error = null;
-      //  })
+    builder.addCase(fetchBook.fulfilled, (state, action) => {
+      if (action.payload.title && action.payload.author) {
+        state.push(createBookWithID(action.payload, true, 'API'))
+      }
+    })
 
-      .addCase(fetchBook.fulfilled, (state, action) => {
-        if (action.payload.title && action.payload.author) {
-          state.push(createBookWithID(action.payload, true, 'API'))
-        }
-      })
     // .addCase(fetchBook.rejected, (state, action) => {
     //   state.loading = false
     //   state.error = action.error.message
@@ -67,18 +70,6 @@ const booksSlice = createSlice({
 
 export const { addBook, deleteBook, toggleFavorite } = booksSlice.actions
 
-// export const thunkFunction = async (dispatch, getState) => {
-//   try {
-//     const res = await axios.get('http://localhost:4000/random-book')
-//     if (res?.data?.title && res?.data?.author) {
-//       const apiBookWithId = createBookWithID(res.data, true, 'API')
-//       dispatch(addBook(apiBookWithId))
-//     }
-//   } catch (error) {
-//     alert('Error fetching random book. Please try again later.')
-//     console.error('Error fetching random book', error)
-//   }
-// }
 export const selectBooks = (state) => state.books
 
 export default booksSlice.reducer
