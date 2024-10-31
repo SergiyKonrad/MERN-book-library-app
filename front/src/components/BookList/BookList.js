@@ -39,10 +39,6 @@ const BookList = () => {
       .toLowerCase()
       .includes(trimmedAuthorFilter.toLowerCase())
 
-    // ---or  another approach with  explicit type conversions ---
-    //       const matchesTitle = String(book.title).toLowerCase().includes(String(titleFilter).toLowerCase());
-    // const matchesAuthor = String(book.author).toLowerCase().includes(String(authorFilter).toLowerCase());
-
     const matchesFavorite = onlyFavoriteFilter ? book.isFavorite : true
     return matchesTitle && matchesAuthor && matchesFavorite
   })

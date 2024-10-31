@@ -10,14 +10,13 @@ const initialState = {
 
 export const fetchBook = createAsyncThunk(
   'books/fetchBook',
-  async (url, thunkAPI) => {
-    // async (url, { dispatch, rejectWithValue }) => {
+  async (url, { dispatch, rejectWithValue }) => {
     try {
       const res = await axios.get(url)
       return res.data
     } catch (error) {
-      thunkAPI.dispatch(setError(error.message))
-      return thunkAPI.rejectWithValue(error)
+      dispatch(setError(error.message))
+      return rejectWithValue(error.message)
     }
   },
 )
@@ -44,7 +43,7 @@ const booksSlice = createSlice({
 
     toggleFavorite: (state, action) => {
       const book = state.books.find((book) => book.id === action.payload)
-      if (book) book.isFavorite = !book.isFavorite
+      if (book) book.isFavorite = !book.isFavorite // Simple toggle without .map
     },
   },
 
@@ -52,7 +51,7 @@ const booksSlice = createSlice({
     builder
       .addCase(fetchBook.pending, (state) => {
         state.isLoadingViaAPI = true
-        state.error = null
+        state.error = null // Optional: reset local error state
       })
 
       .addCase(fetchBook.fulfilled, (state, action) => {
@@ -64,7 +63,7 @@ const booksSlice = createSlice({
 
       .addCase(fetchBook.rejected, (state, action) => {
         state.isLoadingViaAPI = false
-        state.error = action.error.message
+        state.error = action.payload
       })
   },
 })

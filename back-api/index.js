@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const cors = require('cors')
 const booksData = require('./data/books.json')
 
@@ -11,6 +12,10 @@ function getRandomBook() {
   const randomBook = booksData[randomIndex]
   return randomBook
 }
+
+app.get('/books', (req, res) => {
+  res.json(booksData)
+})
 
 app.get('/random-book', (req, res) => {
   res.json(getRandomBook())

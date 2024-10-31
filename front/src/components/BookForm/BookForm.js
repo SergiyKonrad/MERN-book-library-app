@@ -68,15 +68,17 @@ const BookForm = () => {
           />
         </div>
 
-        <button type="submit">Add Book</button>
+        <button type="submit">Add New Book</button>
         <button type="button" onClick={handleAddRandomBook}>
-          Add Random
+          Add Random Recommended
         </button>
 
         <button
           type="button"
           onClick={handleAddRandomBookViaAPI}
-          disabled={isLoadingViaAPI}>
+          disabled={isLoadingViaAPI}
+          aria-busy={isLoadingViaAPI}
+          aria-live="polite">
           {isLoadingViaAPI ? (
             <>
               <span>Loading Book...</span>
