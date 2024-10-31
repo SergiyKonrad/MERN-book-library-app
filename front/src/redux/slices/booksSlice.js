@@ -3,12 +3,10 @@ import axios from 'axios'
 import createBookWithID from '../../utils/createBookWithID'
 import { setError } from './errorSlice'
 
-const initialState = []
-
-// const initialState = {
-//   books: [],
-//   loading: false,
-// }
+const initialState = {
+  books: [],
+  isLoadingViaAPI: false,
+}
 
 export const fetchBook = createAsyncThunk(
   'books/fetchBook',
@@ -19,7 +17,7 @@ export const fetchBook = createAsyncThunk(
       return res.data
     } catch (error) {
       thunkAPI.dispatch(setError(error.message))
-      throw error
+      return thunkAPI.rejectWithValue(error)
     }
   },
 )
@@ -29,47 +27,51 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.push(action.payload)
-      // or ---   state.books.push(action.payload);
+      state.books.push(action.payload)
     },
 
     deleteBook: (state, action) => {
-      return state.filter((book) => book.id !== action.payload)
-      // Since Redux Toolkit uses Immer under the hood, direct assignments like state.books = ... work without needing a return statement. This style is preferred for clarity and follows best practices for handling state mutations in Redux Toolkit.
+      // return {
+      //   ...state,
+      //   books: state.filter((book) => book.id !== action.payload),
+      // }
 
-      // state.books = state.books.filter((book) => book.id !== action.payload)
+      /* Since Redux Toolkit uses Immer under the hood, direct assignments like state.books = ... work without needing a return statement.
+       This style is preferred for clarity and follows best practices for handling state mutations in Redux Toolkit.
+       */
+      state.books = state.books.filter((book) => book.id !== action.payload)
     },
 
     toggleFavorite: (state, action) => {
-      return state.map((book) =>
-        book.id === action.payload
-          ? { ...book, isFavorite: !book.isFavorite }
-          : book,
-      )
-      // --- another option using createSlice and IMMER library ---
-      // state.forEach((book) => {
-      //   if (book.id === action.payload) {
-      //     book.isFavorite = !book.isFavorite
-      //   }
-      // })
+      const book = state.books.find((book) => book.id === action.payload)
+      if (book) book.isFavorite = !book.isFavorite
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchBook.fulfilled, (state, action) => {
-      if (action.payload.title && action.payload.author) {
-        state.push(createBookWithID(action.payload, true, 'API'))
-      }
-    })
 
-    // .addCase(fetchBook.rejected, (state, action) => {
-    //   state.loading = false
-    //   state.error = action.error.message
-    // })
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBook.pending, (state) => {
+        state.isLoadingViaAPI = true
+        state.error = null
+      })
+
+      .addCase(fetchBook.fulfilled, (state, action) => {
+        state.isLoadingViaAPI = false
+        if (action?.payload?.title && action?.payload?.author) {
+          state.books.push(createBookWithID(action.payload, true, 'API'))
+        }
+      })
+
+      .addCase(fetchBook.rejected, (state, action) => {
+        state.isLoadingViaAPI = false
+        state.error = action.error.message
+      })
   },
 })
 
 export const { addBook, deleteBook, toggleFavorite } = booksSlice.actions
 
-export const selectBooks = (state) => state.books
+export const selectBooks = (state) => state.books.books
+export const selectIsLoadingViaAPI = (state) => state.books.isLoadingViaAPI
 
 export default booksSlice.reducer
