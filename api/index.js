@@ -1,9 +1,9 @@
-require('dotenv').config()
+require('dotenv').config() // Secures variables
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const Book = require('./models/Book')
-// const booksData = require('./data/books.json')
+//--- or const booksData = require('./data/books.json')
 
 const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
 

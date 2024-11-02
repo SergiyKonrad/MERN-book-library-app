@@ -1,5 +1,3 @@
-.env
-
 # Logs
 logs/
 *.log
@@ -17,6 +15,7 @@ dist-ssr/
 # Local environment files
 .env.*
 api/.env
+front/.env
 *.local
 
 # Production build
