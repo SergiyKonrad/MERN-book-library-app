@@ -44,7 +44,7 @@ This project demonstrates the use of RESTful APIs, MongoDB for data persistence,
 2. **_Install Backend Dependencies_**
 
 ```bash
-cd back-api
+cd api
 ```
 
 ```
@@ -76,7 +76,7 @@ Replace `<username>`, `<password>`, and `<cluster>` with your MongoDB credential
 **_Backend:_**
 
 ```bash
-cd back-api
+cd api
 ```
 
 ```

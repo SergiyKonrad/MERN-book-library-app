@@ -41,6 +41,7 @@ const BookForm = () => {
 
   const handleAddRandomBookViaAPI = () => {
     dispatch(fetchBook('http://localhost:5000/random-book-delayed'))
+    // const response = await fetch('/api/books');
   }
 
   return (
