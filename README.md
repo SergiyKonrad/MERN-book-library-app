@@ -14,6 +14,17 @@ The **MERN Book Library App** allows users to:
 
 This project demonstrates the use of RESTful APIs, MongoDB for data persistence, and React for a responsive frontend interface.
 
+## Project Structure
+
+This repository contains both the backend (`api/`) and frontend (`front/`) codebases within a single main repository. This setup allows for a clear separation of concerns while keeping the entire project in one place for easier management.
+
+### Code Structure
+
+- **`api/`** - Contains the backend API built with Node.js and Express, responsible for server-side logic, database interactions, and API endpoints.
+- **`front/`** - Contains the frontend application built with React, handling the user interface and client-side interactions.
+
+Each part of the codebase is managed independently, but both are organized within this single repository for a cohesive project structure and simpler deployment.
+
 ## Features
 
 - **Real-Time Updates**: Seamless updates between frontend and backend using RESTful APIs.
@@ -99,7 +110,7 @@ npm start
 - The backend runs on [http://localhost:5000/books](http://localhost:5000/books) to fetch all books.
 - Additional endpoints include:
   - `/random-book`: Fetch a random book.
-  -  `/random-book-delayed`: Fetch a delayed random book.
+  - `/random-book-delayed`: Fetch a delayed random book.
   - `/add-book/:workId`: Add a book from Open Library by work ID.
 
 ## API Endpoints
