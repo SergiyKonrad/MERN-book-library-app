@@ -99,6 +99,7 @@ npm start
 - The backend runs on [http://localhost:5000/books](http://localhost:5000/books) to fetch all books.
 - Additional endpoints include:
   - `/random-book`: Fetch a random book.
+  -  `/random-book-delayed`: Fetch a delayed random book.
   - `/add-book/:workId`: Add a book from Open Library by work ID.
 
 ## API Endpoints
