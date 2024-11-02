@@ -70,7 +70,7 @@ const BookForm = () => {
 
         <button type="submit">Add New Book</button>
         <button type="button" onClick={handleAddRandomBook}>
-          Add Random Recommended
+          Add Recommended
         </button>
 
         <button

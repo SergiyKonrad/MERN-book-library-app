@@ -65,9 +65,9 @@ app.get('/random-book-delayed', async (req, res) => {
   setTimeout(async () => {
     try {
       const books = await Book.find()
-
       const randomBook = books[Math.floor(Math.random() * books.length)]
-      console.log('Books found:', randomBook)
+
+      console.log('Random Book fetched:', randomBook)
       res.json(randomBook)
     } catch (error) {
       console.error('Error fetching delayed random book:', error)
@@ -80,3 +80,49 @@ const port = process.env.PORT || 5000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
 })
+
+// --- version with addBookToMongoDB integrated
+
+/* const axios = require('axios');
+
+// Helper function to fetch and save book data from Open Library
+
+async function addBookToMongoDB(workId) {
+  try {
+    const response = await axios.get(`https://openlibrary.org/works/${workId}.json`);
+    const bookData = response.data;
+
+// Adjust fields to fit your MongoDB schema
+    const newBook = new Book({
+      title: bookData.title,
+      author: bookData.authors[0]?.author?.key || 'Unknown',
+      year: bookData.created?.value?.slice(0, 4),
+      description: bookData.description,
+      subjects: bookData.subjects || [],
+      isFavorite: false,
+      isRandom: false,
+    });
+
+    await newBook.save();
+    console.log('Book added to MongoDB:', newBook);
+  } catch (error) {
+    console.error('Error fetching or saving book:', error);
+  }
+}
+
+// Route to add a book from Open Library to MongoDB
+
+app.post('/add-book/:workId', async (req, res) => {
+  const { workId } = req.params;
+  try {
+    await addBookToMongoDB(workId);
+    res.status(200).json({ message: `Book with ID ${workId} added to MongoDB.` });
+  } catch (error) {
+    console.error('Error adding book:', error);
+    res.status(500).json({ message: 'Error adding book to MongoDB' });
+  }
+});
+
+// Add additional routes for fetching books, fetching random books, etc...
+
+*/
