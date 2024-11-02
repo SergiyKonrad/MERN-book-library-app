@@ -2,20 +2,6 @@
 
 A full-stack web application built with the MERN (MongoDB, Express, React, Node.js) stack, designed to manage a book library, enabling users to browse, add, delete, and view details of books in the collection.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup & Installation](#setup--installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [File Structure](#file-structure)
-- [Future Enhancements](#future-enhancements)
-- [Acknowledgments](#acknowledgments)
-
----
-
 ## Overview
 
 The **MERN Book Library App** allows users to:
