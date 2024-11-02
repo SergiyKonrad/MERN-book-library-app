@@ -1,68 +1,135 @@
-# MERN Book Library App
+# MERN Book Library App 📚
 
-## Available Scripts
+A full-stack web application built with the MERN (MongoDB, Express, React, Node.js) stack, designed to manage a book library, enabling users to browse, add, delete, and view details of books in the collection.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup & Installation](#setup--installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [File Structure](#file-structure)
+- [Future Enhancements](#future-enhancements)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview
 
-### `npm test`
+The **MERN Book Library App** allows users to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View a collection of books
+- Fetch a random book or a delayed random book via API
+- Add new books through a form
+- Mark books as favorites
+- Possibility to integrate books from external libraries, such as Open Library
 
-### `npm run build`
+This project demonstrates the use of RESTful APIs, MongoDB for data persistence, and React for a responsive frontend interface.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Real-Time Updates**: Seamless updates between frontend and backend using RESTful APIs.
+- **Add New Books**: Add books manually or import book details from Open Library.
+- **Random Book Fetch**: Fetches a random book from the collection.
+- **Display All Books**: View a list of all books in the MongoDB collection.
+- **Possibility to API Integration**: Pull in book data from Open Library using work IDs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- **Frontend**: React, Redux for state management, Axios for API requests, CSS for styling
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose ODM
+- **Database**: MongoDB
+- **External Libraries**: Open Library API (for external book data)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Setup & Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/mern-book-library-app.git
+   cd mern-book-library-app
+   ```
+2. **Install Backend Dependencies**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd back-api
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Install Frontend Dependencies**
 
-## Learn More
+```bash
+cd ../front
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Setup MongoDB Connection**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file in the `back-api` directory with your MongoDB connection URI:
 
-### Code Splitting
+```plaintext
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/booklibraryrecommended
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Replace <username>, <password>, and <cluster> with your MongoDB credentials and cluster information.
 
-### Analyzing the Bundle Size
+### Run the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Backend:**
 
-### Making a Progressive Web App
+```bash
+cd back-api
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Frontend:**
 
-### Advanced Configuration
+```bash
+cd ../front
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+### Access the App:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Visit [http://localhost:3000](http://localhost:3000) for the frontend.
+- The backend runs on [http://localhost:5000](http://localhost:5000).
 
-### `npm run build` fails to minify
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Fetch All Books**  
+  Open the app at [http://localhost:3000](http://localhost:3000) to view all available books.
+
+- **Add a New Book**  
+  Use the "Add Book" form on the frontend to manually add a new book.
+
+- **Fetch Random Book**  
+  Use the "Random Book" button on the frontend to fetch a randomly selected book.
+
+- **Possibility to Import from Open Library**  
+  POST a new book by entering the Open Library Work ID to `http://localhost:5000/add-book/:workId`.
+
+## API Endpoints
+
+| Endpoint               | Method | Description                        |
+| ---------------------- | ------ | ---------------------------------- |
+| `/books`               | GET    | Fetch all books                    |
+| `/random-book`         | GET    | Fetch a random book                |
+| `/random-book-delayed` | GET    | Fetch a delayed random book        |
+| `/add-book/:workId`    | POST   | Add a book from Open Library by ID |
+
+## Acknowledgments
+
+- **Open Library API**: For providing access to a vast collection of book data for seamless integration.
+- **MERN Stack**: For a robust framework enabling full-stack development with MongoDB, Express, React, and Node.js, ensuring efficient backend and frontend interactions.
+
+This README provides a clear overview and structure for potential collaborators or users. Customize details as needed to fit your specific project setup and requirements.
+
+## Contributions
+
+Feel free to open an issue or submit a pull request if you'd like to contribute to this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details.
