@@ -31,26 +31,28 @@ This project demonstrates the use of RESTful APIs, MongoDB for data persistence,
 
 ### Setup & Installation
 
-1. **Clone the repository**:
+1. ***Clone the repository***:
    ```bash
-   git clone https://github.com/your-username/mern-book-library-app.git
+   https://github.com/SergiyKonrad/MERN-book-library-app.git
+   ```
+   ```
    cd mern-book-library-app
    ```
-2. **Install Backend Dependencies**
-
-```bash
+2. ***Install Backend Dependencies*** 
+ ```bash
 cd back-api
-npm install
 ```
-
-3. **Install Frontend Dependencies**
-
-```bash
+```
+   npm install
+```
+4. ***Install Frontend Dependencies***
+ ```bash
 cd ../front
-npm install
 ```
-
-4. **Setup MongoDB Connection**
+```
+   npm install
+```
+4. ***Setup MongoDB Connection***
 
 Create a `.env` file in the `back-api` directory with your MongoDB connection URI:
 
@@ -62,39 +64,25 @@ Replace `<username>`, `<password>`, and `<cluster>` with your MongoDB credential
 
 ### Run the Application
 
-**Backend:**
-
-```bash
+***Backend:***
+ ```bash
 cd back-api
+```
+```
 npm start
 ```
-
-**Frontend:**
-
-```bash
+***Frontend:***
+ ```bash
 cd ../front
-npm start
-
 ```
-
+```
+npm start
+```
 ### Access the App:
 
 - Visit [http://localhost:3000](http://localhost:3000) for the frontend.
 - The backend runs on [http://localhost:5000](http://localhost:5000).
 
-## Usage
-
-- **Fetch All Books**  
-  Open the app at [http://localhost:3000](http://localhost:3000) to view all available books.
-
-- **Add a New Book**  
-  Use the "Add Book" form on the frontend to manually add a new book.
-
-- **Fetch Random Book**  
-  Use the "Random Book" button on the frontend to fetch a randomly selected book.
-
-- **Possibility to Import from Open Library**  
-  POST a new book by entering the Open Library Work ID to `http://localhost:5000/add-book/:workId`.
 
 ## API Endpoints
 
@@ -104,6 +92,9 @@ npm start
 | `/random-book`         | GET    | Fetch a random book                |
 | `/random-book-delayed` | GET    | Fetch a delayed random book        |
 | `/add-book/:workId`    | POST   | Add a book from Open Library by ID |
+
+- **Possibility to Import from Open Library**  
+  POST a new book by entering the Open Library Work ID to `http://localhost:5000/add-book/:workId`.
 
 ## Acknowledgments
 
