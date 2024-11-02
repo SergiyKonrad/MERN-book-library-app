@@ -54,11 +54,11 @@ npm install
 
 Create a `.env` file in the `back-api` directory with your MongoDB connection URI:
 
-```plaintext
+```bash
 MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/booklibraryrecommended
 ```
 
-Replace <username>, <password>, and <cluster> with your MongoDB credentials and cluster information.
+Replace `<username>`, `<password>`, and `<cluster>` with your MongoDB credentials and cluster information.
 
 ### Run the Application
 
