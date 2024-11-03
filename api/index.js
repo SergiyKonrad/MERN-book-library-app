@@ -77,10 +77,27 @@ const addBookHelperRouter = require('./addBookHelper')
 app.use('/api', addBookHelperRouter) // Adds the `/add-book/:workId` route from addBookHelper.js and attachs it to /api
 
 // Root route to handle the root URL
+
+// app.get('/', (req, res) => {
+//   res.send(
+//     'Welcome to the MERN Book Library API! Use /api to access the endpoints.',
+//   )
+// })
+
 app.get('/', (req, res) => {
-  res.send(
-    'Welcome to the MERN Book Library API! Use /api to access the endpoints.',
-  )
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to the MERN Book Library API</title>
+    </head>
+    <body>
+        <h1>Welcome to the MERN Book Library API!</h1>
+        <p>Use <code>/api</code> to access the endpoints.</p>
+    </body>
+    </html>
+  `)
 })
 
 // Start the server
