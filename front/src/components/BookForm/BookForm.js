@@ -39,8 +39,7 @@ const BookForm = () => {
     }
   }
 
-  // Currently connected to the route to get delayed random book from MongoDB
-
+  // Connects to the API route for fetching a delayed random book from MongoDB
   const handleAddRandomBookViaAPI = async () => {
     try {
       const response = await fetch(
