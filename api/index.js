@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const Book = require('./models/Book')
+const axios = require('axios')
 // const booksData = require('./data/books.json') // Optional if using static data
 
 const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
@@ -18,7 +19,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// Add '/api' prefix to all routes
+// Set up router with '/api' prefix
 const router = express.Router()
 app.use('/api', router)
 
@@ -35,7 +36,7 @@ app.get('/books', (req, res) => {
 })    etc. */
 
 // --- Route to get all books from MongoDB
-app.get('/books', async (req, res) => {
+router.get('/books', async (req, res) => {
   try {
     const books = await Book.find()
     console.log('Books fetched count:', books.length)
@@ -50,7 +51,7 @@ app.get('/books', async (req, res) => {
 // --- Route to get a random book from MongoDB
 
 // the data is no longer stored in booksData. Instead,it’s retrieved dynamically from the MongoDB database with Mongoose.
-app.get('/random-book', async (req, res) => {
+router.get('/random-book', async (req, res) => {
   try {
     const books = await Book.find()
     if (books.length === 0) {
@@ -67,7 +68,7 @@ app.get('/random-book', async (req, res) => {
 
 // --- Route to get delayed random book from MongoDB
 // CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API
-app.get('/random-book-delayed', async (req, res) => {
+router.get('/random-book-delayed', async (req, res) => {
   setTimeout(async () => {
     try {
       const books = await Book.find()
@@ -104,7 +105,7 @@ app.listen(port, () => {
 })
 
 // Helper function to fetch and save book data from Open Library
-const axios = require('axios')
+
 async function addBookToMongoDB(workId) {
   try {
     const response = await axios.get(
