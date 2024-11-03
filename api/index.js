@@ -94,7 +94,10 @@ app.get('/', (req, res) => {
     </head>
     <body>
         <h1>Welcome to the MERN Book Library API!</h1>
-        <p>Use <code>/api</code> to access the endpoints.</p>
+       <p>
+  Use <strong><code>/api</code></strong> like 
+  <strong>http://localhost:5000/api/random-book</strong> to access the endpoints.
+</p>
     </body>
     </html>
   `)
