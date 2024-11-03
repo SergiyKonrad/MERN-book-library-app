@@ -40,24 +40,10 @@ const BookForm = () => {
   }
 
   // Connects to the API route for fetching a delayed random book from MongoDB
-  const handleAddRandomBookViaAPI = async () => {
-    try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/random-book-delayed`,
-      )
-      if (!response.ok) {
-        throw new Error('Failed to fetch random book') // Triggers catch if API response has a problem
-      }
-      const data = await response.json()
-      dispatch(fetchBook(data))
-    } catch (error) {
-      dispatch(setError(error.message)) // Displays error in the UI via
-    }
+  const handleAddRandomBookViaAPI = () => {
+    const url = `${process.env.REACT_APP_API_URL}/random-book-delayed`
+    dispatch(fetchBook(url))
   }
-
-  // const handleAddRandomBookViaAPI = () => {
-  //   dispatch(fetchBook(`${process.env.REACT_APP_API_URL}/random-book-delayed`))
-  // }
 
   return (
     <div className="app-block book-form">
