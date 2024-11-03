@@ -76,6 +76,13 @@ router.get('/random-book-delayed', async (req, res) => {
 const addBookHelperRouter = require('./addBookHelper')
 app.use('/api', addBookHelperRouter) // Adds the `/add-book/:workId` route from addBookHelper.js and attachs it to /api
 
+// Root route to handle the root URL
+app.get('/', (req, res) => {
+  res.send(
+    'Welcome to the MERN Book Library API! Use /api to access the endpoints.',
+  )
+})
+
 // Start the server
 
 const port = process.env.PORT || 5000
