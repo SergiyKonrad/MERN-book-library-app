@@ -43,7 +43,7 @@ Each part of the codebase is managed independently, but both are organized withi
 - **Database**: MongoDB
 - **External Libraries**: Open Library API (for external book data)
 
-### Setup & Installation
+## Setup & Installation
 
 1. **_Clone the repository_**:
    ```bash
@@ -104,7 +104,7 @@ cd ../front
 npm start
 ```
 
-### Access the App:
+## Access the App:
 
 - Visit [http://localhost:3000](http://localhost:3000) for the frontend.
 - The backend runs on [http://localhost:5000/books](http://localhost:5000/books) to fetch all books.
@@ -113,7 +113,7 @@ npm start
   - `/random-book-delayed`: Fetch a delayed random book.
   - `/add-book/:workId`: Add a book from Open Library by work ID.
 
-## API Endpoints
+### API Endpoints
 
 | Endpoint               | Method | Description                        |
 | ---------------------- | ------ | ---------------------------------- |

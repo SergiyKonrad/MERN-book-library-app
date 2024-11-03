@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const Book = require('./models/Book')
-//--- or const booksData = require('./data/books.json')
+// const booksData = require('./data/books.json') // Optional if using static data
 
 const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
 
@@ -17,6 +17,10 @@ mongoose
 const app = express()
 app.use(cors())
 app.use(express.json())
+
+// Add '/api' prefix to all routes
+const router = express.Router()
+app.use('/api', router)
 
 // Route to get all books from books.json where the data is stored in booksData
 /*
@@ -44,6 +48,7 @@ app.get('/books', async (req, res) => {
 })
 
 // --- Route to get a random book from MongoDB
+
 // the data is no longer stored in booksData. Instead,it’s retrieved dynamically from the MongoDB database with Mongoose.
 app.get('/random-book', async (req, res) => {
   try {
@@ -60,7 +65,8 @@ app.get('/random-book', async (req, res) => {
   }
 })
 
-// --- Optional delayed random book route from MongoDB
+// --- Route to get delayed random book from MongoDB
+// CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API
 app.get('/random-book-delayed', async (req, res) => {
   setTimeout(async () => {
     try {
@@ -76,23 +82,36 @@ app.get('/random-book-delayed', async (req, res) => {
   }, 2000)
 })
 
+// OPTIONAL route to add a book from Open Library (if integration is used)
+router.post('/add-book/:workId', async (req, res) => {
+  const { workId } = req.params
+  try {
+    await addBookToMongoDB(workId)
+    res
+      .status(200)
+      .json({ message: `Book with ID ${workId} added to MongoDB.` })
+  } catch (error) {
+    console.error('Error adding book:', error)
+    res.status(500).json({ message: 'Error adding book to MongoDB' })
+  }
+})
+
+// add additional routes for fetching books, fetching random books, etc...
+
 const port = process.env.PORT || 5000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
 })
 
-// --- version with addBookToMongoDB integrated
-
-/* const axios = require('axios');
-
 // Helper function to fetch and save book data from Open Library
-
+const axios = require('axios')
 async function addBookToMongoDB(workId) {
   try {
-    const response = await axios.get(`https://openlibrary.org/works/${workId}.json`);
-    const bookData = response.data;
+    const response = await axios.get(
+      `https://openlibrary.org/works/${workId}.json`,
+    )
+    const bookData = response.data
 
-// Adjust fields to fit your MongoDB schema
     const newBook = new Book({
       title: bookData.title,
       author: bookData.authors[0]?.author?.key || 'Unknown',
@@ -101,28 +120,11 @@ async function addBookToMongoDB(workId) {
       subjects: bookData.subjects || [],
       isFavorite: false,
       isRandom: false,
-    });
+    })
 
-    await newBook.save();
-    console.log('Book added to MongoDB:', newBook);
+    await newBook.save()
+    console.log('Book added to MongoDB:', newBook)
   } catch (error) {
-    console.error('Error fetching or saving book:', error);
+    console.error('Error fetching or saving book:', error)
   }
 }
-
-// Route to add a book from Open Library to MongoDB
-
-app.post('/add-book/:workId', async (req, res) => {
-  const { workId } = req.params;
-  try {
-    await addBookToMongoDB(workId);
-    res.status(200).json({ message: `Book with ID ${workId} added to MongoDB.` });
-  } catch (error) {
-    console.error('Error adding book:', error);
-    res.status(500).json({ message: 'Error adding book to MongoDB' });
-  }
-});
-
-// Add additional routes for fetching books, fetching random books, etc...
-
-*/
