@@ -43,7 +43,7 @@ const BookForm = () => {
   const handleAddRandomBookViaAPI = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/random-book-delayed`,
+        `${process.env.REACT_APP_API_URL}/api/random-book-delayed`,
       )
       if (!response.ok) {
         throw new Error('Failed to fetch random book') // Triggers catch if API response has a problem
