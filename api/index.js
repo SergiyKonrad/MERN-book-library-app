@@ -78,12 +78,6 @@ app.use('/api', addBookHelperRouter) // Adds the `/add-book/:workId` route from 
 
 // Root route to handle the root URL
 
-// app.get('/', (req, res) => {
-//   res.send(
-//     'Welcome to the MERN Book Library API! Use /api to access the endpoints.',
-//   )
-// })
-
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
