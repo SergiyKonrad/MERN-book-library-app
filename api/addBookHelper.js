@@ -23,8 +23,8 @@ async function addBookToMongoDB(workId) {
       year,
       description: bookData.description?.value || 'No description available',
       subjects: bookData.subjects || [],
-      isFavorite: false,
-      isRandom: false,
+      // isFavorite: false,
+      // isRandom: false,
     })
     await newBook.save()
 

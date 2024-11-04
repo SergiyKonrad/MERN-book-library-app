@@ -1,6 +1,8 @@
 # MERN Book Library App 📚
 
-A full-stack web application built with the MERN (MongoDB, Express, React, Node.js) stack and Redux for state management, designed to manage a book library, enabling users to browse, add, delete, and view details of books in the collection.
+A full-stack web application built with the MERN (MongoDB, Express, React, Node.js) stack and Redux for state management. The MERN Book Library App allows users to browse, add, delete, and view details of books in a centralized library collection.
+
+Explore the full project at [MERN Book Library App](https://mern-book-library-app.vercel.app/).
 
 ## Overview
 
@@ -10,7 +12,7 @@ The **MERN Book Library App** allows users to:
 - Fetch a random book or a delayed random book via API
 - Add new books through a form
 - Mark books as favorites
-- Possibility to integrate books from external libraries, such as Open Library
+- Integrate books from external libraries, such as Open Library
 
 This project demonstrates the use of RESTful APIs, MongoDB for data persistence, and React for a responsive frontend interface.
 
@@ -23,18 +25,23 @@ This repository contains both the backend (`api/`) and frontend (`front/`) codeb
 - **`api/`** - Contains the backend API built with Node.js and Express, responsible for server-side logic, database interactions, and API endpoints.
 - **`front/`** - Contains the frontend application built with React, handling the user interface and client-side interactions.
 
-Each part of the codebase is managed independently, but both are organized within this single repository for a cohesive project structure and simpler deployment.
+## Deployment
+
+- **Frontend**: Hosted on [Vercel](https://mern-book-library-app.vercel.app/)
+- **Backend**: Hosted on Render and linked to the frontend for seamless API integration
 
 ## Features
 
-- **Real-Time Updates**: Seamless updates between frontend and backend using RESTful APIs.
-- **Add New Books**: Add books manually or import book details from Open Library.
+- **Browse Books**: View all books in the library with relevant details.
+- **Add New Books**: Add books manually or import book details from Open Library or an external library API.
 - **Add Recommended Book**:  
   _This feature runs only on the frontend and adds a predefined recommended book to your collection._
 - **Add Random Book via API**:  
   _This feature uses the backend to fetch a random book from the MongoDB database._
 - **Random Book Fetch**: Fetches a random book from the collection.
+- **Delete Books**: Remove books from the collection with a single click.
 - **Possibility to API Integration**: Pull in book data from Open Library using work IDs.
+- **Redux State Management**: Efficiently manage application state, ensuring responsive and dynamic updates.
 
 ## Technologies Used
 
