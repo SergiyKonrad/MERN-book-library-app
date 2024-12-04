@@ -33,7 +33,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'https://https://mern-book-library-app.vercel.app',
+      'https://mern-book-library-app.vercel.app',
     ], // Frontend on Vercel
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
