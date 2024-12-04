@@ -34,10 +34,10 @@ This repository contains both the backend (`api/`) and frontend (`front/`) codeb
 
 - **Browse Books**: View all books in the library with relevant details.
 - **Add New Books**: Add books manually or import book details from Open Library or an external library API.
-- **Add Recommended Book**:  
+- **Fetch Recommended**:  
   _This feature runs only on the frontend and adds a predefined recommended book to your collection._
 - **Add Random Book via API**:  
-  _This feature uses the backend to fetch a random book from the MongoDB database._
+  _Uses the backend to fetch a random book from the MongoDB database._
 - **Random Book Fetch**: Fetches a random book from the collection.
 - **Delete Books**: Remove books from the collection with a single click.
 - **Possibility to API Integration**: Pull in book data from Open Library using work IDs.
@@ -128,9 +128,6 @@ npm start
 | `/random-book`         | GET    | Fetch a random book                |
 | `/random-book-delayed` | GET    | Fetch a delayed random book        |
 | `/add-book/:workId`    | POST   | Add a book from Open Library by ID |
-
-- **Possibility to Import from Open Library**  
-  POST a new book by entering the Open Library Work ID to `http://localhost:5000/add-book/:workId`.
 
 ## Acknowledgments
 
