@@ -44,13 +44,15 @@ app.use(
 // Middleware for parsing JSON
 app.use(express.json())
 
-// Set up main router
+// Main Router
 const router = express.Router()
-app.use('/api', router) // Routes with /api prefix
+app.use('/api', router) // All routes prefixed with `/api`
 
 // -----  Routes to get books from MongoDB -----
 
 // NB. The data is no longer stored in booksData. Instead,it’s retrieved dynamically from the MongoDB database with Mongoose.
+
+// Fetch all books
 router.get('/books', async (req, res) => {
   try {
     const books = await Book.find()
@@ -63,7 +65,7 @@ router.get('/books', async (req, res) => {
   }
 })
 
-// --- Random book route ---
+// Fetch a random book
 router.get('/random-book', async (req, res) => {
   try {
     const books = await Book.find()
@@ -71,7 +73,7 @@ router.get('/random-book', async (req, res) => {
       return res.status(404).json({ message: 'No books found' })
     }
     const randomBook = books[Math.floor(Math.random() * books.length)]
-    console.log('Books found:', randomBook)
+    // console.log('Books found:', randomBook)
     res.json(randomBook)
   } catch (error) {
     console.error('Error fetching random book:', error)
@@ -79,9 +81,8 @@ router.get('/random-book', async (req, res) => {
   }
 })
 
-// ---- Delayed random book route ----
+// Fetch a delayed random book (CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API)
 
-//NB. IT CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API
 router.get('/random-book-delayed', async (req, res) => {
   setTimeout(async () => {
     try {
@@ -96,7 +97,7 @@ router.get('/random-book-delayed', async (req, res) => {
       console.error('Error fetching delayed random book:', error)
       res.status(500).json({ message: 'Error fetching random book' })
     }
-  }, 2000)
+  }, 2000) // Simulate delay
 })
 
 // Attach additional routes from addBookHelper.js or other routes
