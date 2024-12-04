@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
@@ -6,9 +7,6 @@ const addBookHelperRouter = require('./addBookHelper')
 const welcomeRoute = require('./routes/welcomeRoute')
 const Book = require('./models/Book')
 // const booksData = require('./data/books.json') // Optional if using static data
-
-// Load environment variables
-require('dotenv').config()
 
 const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
 
@@ -35,10 +33,11 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'https://https://mern-book-library-app.vercel.app/',
-    ], // Update with your frontend URLs
+      'https://https://mern-book-library-app.vercel.app',
+    ], // Frontend on Vercel
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   }),
 )
 
