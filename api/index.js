@@ -1,21 +1,48 @@
-require('dotenv').config() // Secures variables
 const express = require('express')
 const cors = require('cors')
+const helmet = require('helmet')
 const mongoose = require('mongoose')
+const addBookHelperRouter = require('./addBookHelper')
+const welcomeRoute = require('./routes/welcomeRoute')
 const Book = require('./models/Book')
 // const booksData = require('./data/books.json') // Optional if using static data
 
+// Load environment variables
+require('dotenv').config()
+
 const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
 
+// Connect to MongoDB
 console.log('Connecting to MongoDB with URI...')
-
 mongoose
   .connect(MONGODB_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch((err) => console.error('MongoDB connection error:', err))
 
+// Initialize Express
 const app = express()
-app.use(cors())
+
+// Apply Helmet for security
+app.use(
+  helmet({
+    contentSecurityPolicy: false, // Disable CSP for development
+    crossOriginEmbedderPolicy: false, // Disable COEP for compatibility
+  }),
+)
+
+// Apply CORS for cross-origin requests
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://https://mern-book-library-app.vercel.app/',
+    ], // Update with your frontend URLs
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }),
+)
+
+// Middleware for parsing JSON
 app.use(express.json())
 
 // Set up main router
@@ -60,8 +87,10 @@ router.get('/random-book-delayed', async (req, res) => {
   setTimeout(async () => {
     try {
       const books = await Book.find()
+      if (books.length === 0) {
+        return res.status(404).json({ message: 'No books found for delay' })
+      }
       const randomBook = books[Math.floor(Math.random() * books.length)]
-
       console.log('Random Book fetched:', randomBook)
       res.json(randomBook)
     } catch (error) {
@@ -71,34 +100,13 @@ router.get('/random-book-delayed', async (req, res) => {
   }, 2000)
 })
 
-// Import the additional addBook route
+// Attach additional routes from addBookHelper.js or other routes
+app.use('/api', addBookHelperRouter)
 
-const addBookHelperRouter = require('./addBookHelper')
-app.use('/api', addBookHelperRouter) // Adds the `/add-book/:workId` route from addBookHelper.js and attachs it to /api
-
-// Root route to handle the root URL
-
-app.get('/', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Welcome to the MERN Book Library API</title>
-    </head>
-    <body>
-        <h1>Welcome to the MERN Book Library API!</h1>
-       <p>
-  Use <strong><code>/api</code></strong> like 
-  <strong>http://localhost:5000/api/random-book</strong> to access the endpoints.
-</p>
-    </body>
-    </html>
-  `)
-})
+// Root route for API welcome message
+app.use('/', welcomeRoute)
 
 // Start the server
-
 const port = process.env.PORT || 5000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
