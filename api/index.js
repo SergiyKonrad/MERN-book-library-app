@@ -90,7 +90,7 @@ router.get('/random-book-delayed', async (req, res) => {
         return res.status(404).json({ message: 'No books found for delay' })
       }
       const randomBook = books[Math.floor(Math.random() * books.length)]
-      console.log('Random Book fetched:', randomBook)
+      // console.log('Random Book fetched:', randomBook)
       res.json(randomBook)
     } catch (error) {
       console.error('Error fetching delayed random book:', error)

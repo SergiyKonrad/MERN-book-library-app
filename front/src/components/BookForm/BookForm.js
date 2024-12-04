@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaSpinner } from 'react-icons/fa'
 import {
@@ -17,27 +17,30 @@ const BookForm = () => {
   const isLoadingViaAPI = useSelector(selectIsLoadingViaAPI)
   const dispatch = useDispatch()
 
-  const handleAddRandomBook = () => {
+  const handleAddRandomBook = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * booksData.length)
     const randomBook = booksData[randomIndex]
     const randomBookWithId = createBookWithID(randomBook, true, 'random')
     dispatch(addBook(randomBookWithId))
-  }
+  }, [dispatch])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault()
 
-    const trimmedTitle = title.trim()
-    const trimmedAuthor = author.trim()
+      const trimmedTitle = title.trim()
+      const trimmedAuthor = author.trim()
 
-    if (trimmedTitle && trimmedAuthor) {
-      dispatch(addBook(createBookWithID({ title, author })))
-      setTitle('')
-      setAuthor('')
-    } else {
-      dispatch(setError('Please fill in both the title and author fields.'))
-    }
-  }
+      if (trimmedTitle && trimmedAuthor) {
+        dispatch(addBook(createBookWithID({ title, author })))
+        setTitle('')
+        setAuthor('')
+      } else {
+        dispatch(setError('Please fill in both the title and author fields.'))
+      }
+    },
+    [dispatch, title, author],
+  )
 
   // Connects to the API route for fetching a delayed random book from MongoDB
   const handleAddRandomBookViaAPI = () => {
