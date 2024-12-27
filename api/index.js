@@ -13,32 +13,32 @@ const MONGODB_URI = process.env.MONGODB_URI || 'your_default_mongodb_uri_here'
 // Connect to MongoDB
 console.log('Connecting to MongoDB with URI...')
 mongoose
-  .connect(MONGODB_URI)
-  .then(() => console.log('MongoDB connected...'))
-  .catch((err) => console.error('MongoDB connection error:', err))
+    .connect(MONGODB_URI)
+    .then(() => console.log('MongoDB connected...'))
+    .catch((err) => console.error('MongoDB connection error:', err))
 
 // Initialize Express
 const app = express()
 
 // Apply Helmet for security
 app.use(
-  helmet({
-    contentSecurityPolicy: false, // Disable CSP for development
-    crossOriginEmbedderPolicy: false, // Disable COEP for compatibility
-  }),
+    helmet({
+        contentSecurityPolicy: false, // Disable CSP for development
+        crossOriginEmbedderPolicy: false, // Disable COEP for compatibility
+    }),
 )
 
 // Apply CORS for cross-origin requests
 app.use(
-  cors({
-    origin: [
-      'http://localhost:3000',
-      'https://mern-book-library-app.vercel.app',
-    ], // Frontend on Vercel
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  }),
+    cors({
+        origin: [
+            'http://localhost:3000',
+            'https://mern-book-library-app.vercel.app',
+        ], // Frontend on Vercel
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,
+    }),
 )
 
 // Middleware for parsing JSON
@@ -54,50 +54,53 @@ app.use('/api', router) // All routes prefixed with `/api`
 
 // Fetch all books
 router.get('/books', async (req, res) => {
-  try {
-    const books = await Book.find()
-    console.log('Books fetched count:', books.length)
-    // res.set('Cache-Control', 'no-store') // Disable caching if needed
-    res.json(books)
-  } catch (error) {
-    console.error('Error fetching books:', error)
-    res.status(500).json({ message: 'Error fetching books' })
-  }
+    try {
+        const books = await Book.find({}, { createdAt: 0, updatedAt: 0 }) // Exclude timestamps
+        console.log('Books fetched count:', books.length)
+        // res.set('Cache-Control', 'no-store') // Disable caching if needed
+        res.json(books)
+    } catch (error) {
+        console.error('Error fetching books:', error)
+        res.status(500).json({ message: 'Error fetching books' })
+    }
 })
 
 // Fetch a random book
 router.get('/random-book', async (req, res) => {
-  try {
-    const books = await Book.find()
-    if (books.length === 0) {
-      return res.status(404).json({ message: 'No books found' })
+    try {
+        const books = await Book.find({}, { createdAt: 0, updatedAt: 0 })
+        if (books.length === 0) {
+            return res.status(404).json({ message: 'No books found' })
+        }
+        const randomBook = books[Math.floor(Math.random() * books.length)]
+        // console.log('Books found:', randomBook)
+        res.json(randomBook)
+    } catch (error) {
+        console.error('Error fetching random book:', error)
+        res.status(500).json({ message: 'Error fetching random book' })
     }
-    const randomBook = books[Math.floor(Math.random() * books.length)]
-    // console.log('Books found:', randomBook)
-    res.json(randomBook)
-  } catch (error) {
-    console.error('Error fetching random book:', error)
-    res.status(500).json({ message: 'Error fetching random book' })
-  }
 })
 
-// Fetch a delayed random book (CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API)
+// Fetch a delayed random book
+// CURRENTLY CONNECTED TO THE FRONTEND as Add Random via API !
 
 router.get('/random-book-delayed', async (req, res) => {
-  setTimeout(async () => {
-    try {
-      const books = await Book.find()
-      if (books.length === 0) {
-        return res.status(404).json({ message: 'No books found for delay' })
-      }
-      const randomBook = books[Math.floor(Math.random() * books.length)]
-      // console.log('Random Book fetched:', randomBook)
-      res.json(randomBook)
-    } catch (error) {
-      console.error('Error fetching delayed random book:', error)
-      res.status(500).json({ message: 'Error fetching random book' })
-    }
-  }, 2000) // Simulate delay
+    setTimeout(async () => {
+        try {
+            const books = await Book.find({}, { createdAt: 0, updatedAt: 0 })
+            if (books.length === 0) {
+                return res
+                    .status(404)
+                    .json({ message: 'No books found for delay' })
+            }
+            const randomBook = books[Math.floor(Math.random() * books.length)]
+            // console.log('Random Book fetched:', randomBook)
+            res.json(randomBook)
+        } catch (error) {
+            console.error('Error fetching delayed random book:', error)
+            res.status(500).json({ message: 'Error fetching random book' })
+        }
+    }, 2000) // Simulate delay
 })
 
 // Attach additional routes from addBookHelper.js or other routes
@@ -109,5 +112,5 @@ app.use('/', welcomeRoute)
 // Start the server
 const port = process.env.PORT || 5000
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+    console.log(`Server is running on port ${port}`)
 })
